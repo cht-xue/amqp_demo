@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: provider
+# -------------- rabbitmq 配置
+  rabbitmq:
+    host: xx # rabbitmq 的 ip 地址
+    port: 5672 # 端口
+    username: guest # 账号
+    password: guest # 密码
+    virtualHost: / # 连接到RabbitMQ服务上的虚拟主机

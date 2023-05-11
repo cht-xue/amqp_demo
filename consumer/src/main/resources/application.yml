@@ -1,0 +1,16 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: consumer
+  # -------------- rabbitmq 配置
+  rabbitmq:
+    host: xx # rabbitmq 的 ip 地址
+    port: 5672 # 端口
+    username: guest # 账号
+    password: guest # 密码
+    virtualHost: / # 连接到RabbitMQ服务上的虚拟主机
+    # 消息接收设置
+    listener:
+      simple:
+        prefetch: 1 # 消息预取限制，控制预取消息的上限，处理完才可以继续获取
