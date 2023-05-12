@@ -14,3 +14,14 @@ spring:
     listener:
       simple:
         prefetch: 1 # 消息预取限制，控制预取消息的上限，处理完才可以继续获取
+
+        # 消费者消息确认机制
+        acknowledge-mode: auto # 自动 ack，由 spring 检测 listener 代码是否出现异常，没有异常则返回 ack；抛出异常则返回 nack
+
+        # 配置 retry ,消费者失败重试
+        retry:
+          enabled: true # 开启消费者失败重试
+          initial-interval: 1000 # 初识的失败等待时长
+          multiplier: 1 # 下次失败的等待时长倍数，下次等待时长 = multiplier * initial-interval
+          max-attempts: 3 # 最大重试次数
+          stateless: true # true：无状态;false 有状态。如果业务中包含事务，这里改为 false

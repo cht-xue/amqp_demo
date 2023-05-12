@@ -8,3 +8,9 @@ spring:
     username: guest # 账号
     password: guest # 密码
     virtualHost: / # 连接到RabbitMQ服务上的虚拟主机
+
+    # 生产者消息确认机制
+    publisher-confirm-type: correlated # 设置生产者消息确认模式为相关确认模式
+    publisher-returns: true # 开启消息退回机制
+    template:
+      mandatory: true # 标记生产者消息为强制性的，确保消息始终被处理

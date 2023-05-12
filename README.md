@@ -24,9 +24,14 @@
 ## 功能
 
 - 实现基础消息队列，工作消息队列
-- 实现 Fanout 交换机类型
-- 实现 Direct 交换机类型
-- 实现 Topic 交换机类型
+- 实现交换机实现
+  - 实现 Fanout 交换机类型
+  - 实现 Direct 交换机类型
+  - 实现 Topic 交换机类型
+- 实现消息可靠性
+  - 实现生产者消息确认机制
+  - 实现消息持久化
+  - 实现消费者消息确认机制 + 消费者消息消费失败重试机制
 
 ## 使用
 
@@ -62,7 +67,7 @@ src/main/java/com/example
 ```
 src/main
 	|-- java/com/cht/consumer
-		|-- config -- 配置队列和交换机
+		|-- config -- 队列和交换机等配置
 		|-- listener -- 消费者处理消息
 		|-- ConsumerApplication -- 启动类
 	|-- resources
@@ -75,9 +80,11 @@ src/main
 src
  |-- main
  	|-- java/com/cht/provider
+ 		|-- config -- 配置包
  		|-- ProviderApplication -- 启动类
  	|-- resources
  		|-- application.yml -- 配置文件
  |-- test/java/com/cht/
- 	| -- QueueTest -- 测试类
+ 	|-- QueueTest -- 基础模式测试类
+ 	|--	MessageReliabilityTest -- 消息可靠性测试类
 ```

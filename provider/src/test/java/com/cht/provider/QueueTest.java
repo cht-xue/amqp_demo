@@ -10,7 +10,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * 测试：
+ * 基础模式测试：
  * 1、基础消息队列
  * 2、工作消息队列
  * 3、扇型交换机 (Fanout Exchange)
